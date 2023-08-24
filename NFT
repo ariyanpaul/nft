@@ -1,0 +1,27 @@
+let numNFTs = 0;                                        // Create a variable to hold a number of NFTs
+const nfts = [];                                        // Create an array to hold NFT objects
+function mintNFT(name, description, image) {            // Function to mint an NFT and store its metadata
+  const newNFT = {
+    name: name,
+    description: description,
+    image: image
+  };
+numNFTs++;                                           // Increment the numNFTs variable to keep track of the total number of NFTs
+ nfts.push(newNFT);                                  // Store the newNFT object in the nfts array
+}
+function listNFTs() {                                // Function to list all NFTs and their metadata
+  
+  nfts.forEach((nft) => {                            // Loop through the nfts array and print the metadata for each NFT
+    console.log("Name: " + nft.name);
+    console.log("Description: " + nft.description);
+    console.log("Image: " + nft.image);
+    console.log("                   ");
+  });
+}
+function getTotalSupply() {                          // Function to get the total supply of NFTs
+  return numNFTs;
+}
+mintNFT("Bird", "blueFeather", "image1.jpg");        // Minting a new NFT
+mintNFT("harambe", "gorilla", "image2.jpg");         // Minting another NFT
+listNFTs();                                          // Displaying the list of NFTs
+console.log("Total Supply: " + getTotalSupply());    // Getting the total supply of NFTs
